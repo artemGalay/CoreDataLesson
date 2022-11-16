@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D980423529255685002B126E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980423429255685002B126E /* CoreDataManager.swift */; };
 		D9DA2775292544980046D4D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA2774292544980046D4D8 /* AppDelegate.swift */; };
-		D9DA2777292544980046D4D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA2776292544980046D4D8 /* SceneDelegate.swift */; };
 		D9DA2779292544980046D4D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA2778292544980046D4D8 /* ViewController.swift */; };
 		D9DA277F292544980046D4D8 /* CoreDataLesson.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9DA277D292544980046D4D8 /* CoreDataLesson.xcdatamodeld */; };
 		D9DA2781292544990046D4D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DA2780292544990046D4D8 /* Assets.xcassets */; };
@@ -18,9 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D980423429255685002B126E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D9DA2771292544980046D4D8 /* CoreDataLesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataLesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DA2774292544980046D4D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9DA2776292544980046D4D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D9DA2778292544980046D4D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9DA277E292544980046D4D8 /* CoreDataLesson.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataLesson.xcdatamodel; sourceTree = "<group>"; };
 		D9DA2780292544990046D4D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,11 +41,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D9DA2768292544980046D4D8 = {
+		D9804236292556AA002B126E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				D9DA278B2925511A0046D4D8 /* Person+CoreDataClass.swift */,
 				D9DA278C2925511B0046D4D8 /* Person+CoreDataProperties.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D9804237292556BB002B126E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D9DA2774292544980046D4D8 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D9804238292556C5002B126E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D980423429255685002B126E /* CoreDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9DA2768292544980046D4D8 = {
+			isa = PBXGroup;
+			children = (
 				D9DA2773292544980046D4D8 /* CoreDataLesson */,
 				D9DA2772292544980046D4D8 /* Products */,
 			);
@@ -62,8 +85,9 @@
 		D9DA2773292544980046D4D8 /* CoreDataLesson */ = {
 			isa = PBXGroup;
 			children = (
-				D9DA2774292544980046D4D8 /* AppDelegate.swift */,
-				D9DA2776292544980046D4D8 /* SceneDelegate.swift */,
+				D9804237292556BB002B126E /* App */,
+				D9804236292556AA002B126E /* Entity */,
+				D9804238292556C5002B126E /* Model */,
 				D9DA2778292544980046D4D8 /* ViewController.swift */,
 				D9DA2780292544990046D4D8 /* Assets.xcassets */,
 				D9DA2782292544990046D4D8 /* LaunchScreen.storyboard */,
@@ -148,7 +172,7 @@
 				D9DA278E2925511B0046D4D8 /* Person+CoreDataProperties.swift in Sources */,
 				D9DA278D2925511B0046D4D8 /* Person+CoreDataClass.swift in Sources */,
 				D9DA277F292544980046D4D8 /* CoreDataLesson.xcdatamodeld in Sources */,
-				D9DA2777292544980046D4D8 /* SceneDelegate.swift in Sources */,
+				D980423529255685002B126E /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
