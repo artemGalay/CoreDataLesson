@@ -18,14 +18,8 @@ class ViewController: UIViewController {
 
     var person: Person?
 
-    var fetchResultController: NSFetchedResultsController<NSFetchRequestResult> = {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.entity)
-        let sortDescriptior = NSSortDescriptor(key: Constants.sortName, ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptior]
-        let fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.instance.context, sectionNameKeyPath: nil, cacheName: nil)
-        return fetchedResultController
-    }()
-
+    var fetchResultController = CoreDataManager.instance.fetchResultController(entityName: Constants.entity, sortName: Constants.sortName)
+    
     private lazy var userTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Print your name here"
@@ -171,6 +165,7 @@ class ViewController: UIViewController {
             CoreDataManager.instance.saveContext()
             userTextField.text = nil
             ageTextField.text = nil
+            userTextField.becomeFirstResponder()
             self.person = nil
         }
     }
@@ -201,6 +196,11 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let person = fetchResultController.object(at: indexPath) as! Person
+            CoreDataManager.instance.context.delete(person)
+            CoreDataManager.instance.saveContext()
+        }
 
         }
     }
